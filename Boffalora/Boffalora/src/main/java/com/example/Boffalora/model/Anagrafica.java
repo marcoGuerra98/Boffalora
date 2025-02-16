@@ -46,12 +46,18 @@ public class Anagrafica {
     @Column(name = "cap")
     private String cap;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "numero_cellulare")
+    private String numeroCellulare;
+
     public Anagrafica() {
     }
 
     public Anagrafica(Long id, String nome, String cognome, String sesso, String codiceFiscale, Date dataNascita,
                       String nazioneNascita, String comuneNascita, String nazioneResidenza, String comuneResidenza,
-                      String indirizzo, String cap) {
+                      String indirizzo, String cap, String email, String numeroCellulare) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -64,6 +70,8 @@ public class Anagrafica {
         this.comuneResidenza = comuneResidenza;
         this.indirizzo = indirizzo;
         this.cap = cap;
+        this.email = email;
+        this.numeroCellulare = numeroCellulare;
     }
 
     public Long getId() {
@@ -160,5 +168,21 @@ public class Anagrafica {
 
     public void setCap(String cap) {
         this.cap = cap;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNumeroCellulare() {
+        return numeroCellulare;
+    }
+
+    public void setNumeroCellulare(String numeroCellulare) {
+        this.numeroCellulare = numeroCellulare;
     }
 }

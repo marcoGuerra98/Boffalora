@@ -15,14 +15,11 @@ document.getElementById("mioBottone").addEventListener('click', () => {
         nazioneResidenza: document.getElementById('nazioneResidenza').value,
         comuneResidenza: document.getElementById('comuneResidenza').value,
         indirizzo: document.getElementById('indirizzo').value,
-        cap: document.getElementById('cap').value
-    };
-
-    const user = {
-        anagrafica: anagrafica,
+        cap: document.getElementById('cap').value,
         email: document.getElementById('email').value,
         numeroCellulare: document.getElementById('numeroCellulare').value
-    }
+    };
+
 
     fetch('/api/anagrafica/setAnagrafica', {
         method: 'POST',

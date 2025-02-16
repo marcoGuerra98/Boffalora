@@ -68,6 +68,16 @@ public class Utils {
                 entity.setCap(string);
             }
 
+            string = bean.getEmail();
+            if (string != null) {
+                entity.setEmail(string);
+            }
+
+            string = bean.getNumeroCellulare();
+            if (string != null) {
+                entity.setNumeroCellulare(string);
+            }
+
         }
         return entity;
     }

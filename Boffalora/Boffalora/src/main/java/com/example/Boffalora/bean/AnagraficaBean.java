@@ -15,10 +15,12 @@ public class AnagraficaBean {
     private String comuneResidenza;
     private String indirizzo;
     private String cap;
+    private String email;
+    private String numeroCellulare;
 
     public AnagraficaBean(String nome, String cognome, String sesso, String codiceFiscale, Date dataNascita,
                           String nazioneNascita, String comuneNascita, String nazioneResidenza, String comuneResidenza,
-                          String indirizzo, String cap) {
+                          String indirizzo, String cap,String email, String numeroCellulare) {
         this.nome = nome;
         this.cognome = cognome;
         this.sesso = sesso;
@@ -30,6 +32,8 @@ public class AnagraficaBean {
         this.comuneResidenza = comuneResidenza;
         this.indirizzo = indirizzo;
         this.cap = cap;
+        this.email = email;
+        this.numeroCellulare = numeroCellulare;
     }
 
 
@@ -119,5 +123,21 @@ public class AnagraficaBean {
 
     public void setCap(String cap) {
         this.cap = cap;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNumeroCellulare() {
+        return numeroCellulare;
+    }
+
+    public void setNumeroCellulare(String numeroCellulare) {
+        this.numeroCellulare = numeroCellulare;
     }
 }
