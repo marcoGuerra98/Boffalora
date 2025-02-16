@@ -34,14 +34,14 @@ document.getElementById("mioBottone").addEventListener('click', () => {
              return response.json(); // <--- Sposta response.json() qui
          } else {
              alert('Errore durante l\'invio dei dati.');
-             window.location.href = '/paginaErrore.html';
+             window.location.href = '/proloco.html';
              throw new Error('Errore nella richiesta'); // <--- Importante: lancia un errore per evitare l'esecuzione del .then successivo
          }
     })
     .then(anagrafica => { // <--- Questo blocco viene eseguito solo se response.ok è true
         console.log('Success:', anagrafica);
         alert('Dati inviati con successo!');
-        window.location.href = '/paginaSuccesso.html'; // <--- Reindirizza qui solo dopo il successo completo
+        window.location.href = '/proloco.html'; // <--- Reindirizza qui solo dopo il successo completo
     })
     .catch((error) => {
         console.error('Error:', error);

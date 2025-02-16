@@ -39,6 +39,9 @@ body {
 label {
     display: block;
     margin-bottom: 5px;
+    font-size: 1.2em; /* Ingrandisce la label del 20% rispetto alla dimensione predefinita */
+    /* oppure */
+    /*font-size: 16px;*/
 }
 
 input, select {
@@ -46,6 +49,7 @@ input, select {
     padding: 8px;
     box-sizing: border-box;
     border: 1px solid #00ADC6;
+    font-size: 1.3em;
 }
 
 #mioBottone{
