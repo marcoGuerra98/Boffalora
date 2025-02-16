@@ -40,8 +40,6 @@ label {
     display: block;
     margin-bottom: 5px;
     font-size: 1.2em; /* Ingrandisce la label del 20% rispetto alla dimensione predefinita */
-    /* oppure */
-    /*font-size: 16px;*/
 }
 
 input, select {
@@ -106,4 +104,5 @@ input, select {
 img {
   width: 150px; /* Larghezza relativa al contenitore genitore */
   height: auto;
+  margin-bottom: 4px;
 }
