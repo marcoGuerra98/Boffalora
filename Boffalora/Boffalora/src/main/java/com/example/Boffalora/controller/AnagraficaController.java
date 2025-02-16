@@ -1,7 +1,8 @@
 package com.example.Boffalora.controller;
 
-import com.example.Boffalora.dao.AnagraficaRepository;
+
 import com.example.Boffalora.model.Anagrafica;
+import com.example.Boffalora.service.AnagraficaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +13,11 @@ import java.util.List;
 public class AnagraficaController {
 
     @Autowired
-    private AnagraficaRepository anagraficaRepository;
+    private AnagraficaServiceImpl anagraficaService;
 
     @GetMapping
     public List<Anagrafica> getAllAnagrafica() {
-        return anagraficaRepository.findAll();
+        return anagraficaService.getAllAnagrafica();
     }
 
 }
