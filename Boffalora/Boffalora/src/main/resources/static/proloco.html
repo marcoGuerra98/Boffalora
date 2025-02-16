@@ -7,97 +7,102 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tesseramento Proloco</h1>
-    <div class="container">
-        <h3>Dati Anagrafici</h3>
-        <form id="myForm">
-            <div class="grid">
-                <div class="input-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome"  required>
-                </div>
-                <div class="input-group">
-                    <label for="cognome">Cognome</label>
-                    <input type="text" id="cognome" name="cognome"  required>
-                </div>
-                <div class="input-group">
-                    <label for="codice_fiscale">Codice Fiscale</label>
-                    <input type="text" id="codice_fiscale" name="codice_fiscale">
-                </div>
+<h1>Tesseramento Proloco</h1>
+<div class="container">
+    <h3>Dati Anagrafici</h3>
+    <form id="myForm">
+        <div class="grid">
+            <div class="input-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome"  required>
             </div>
-    
-            <div class="grid">
-                <div class="input-group">
-                    <label for="nazione_nascita">Nazione di Nascita</label>
-                    <input type="text" id="nazione_nascita" name="nazione_nascita"  required>
-                </div>
-                <div class="input-group">
-                    <label for="comuneNascita">Comune di Nascita</label>
-                    <input type="text" id="comuneNascita" name="comuneNascita"  required>
-                </div>
-                <div class="input-group">
-                    <div class="input-group">
-                        <label for="data_nascita">Data di Nascita</label>
-                        <input type="date" id="data_nascita" name="data_nascita"  required>
-                    </div>
-                </div>
+            <div class="input-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome"  required>
             </div>
-            <div class="grid">
-                <div class="input-group">
-                    <label for="sesso">Sesso</label>
-                    <select id="sesso" name="sesso"  required>
-                        <option value="">-- Seleziona --</option>
-                        <option value="maschio">Maschio</option>
-                        <option value="femmina">Femmina</option>
-                    </select>
-                </div>
+            <div class="input-group">
+                <label for="codiceFiscale">Codice Fiscale</label>
+                <input type="text" id="codiceFiscale" name="codiceFiscale">
             </div>
-            
-             
-            <h3>Residenza</h3>
-            <div class="grid">
-                <div class="input-group">
-                    <label for="nazione_residenza">Nazione di Residenza</label>
-                    <input type="text" id="nazione_residenza" name="nazione_residenza">
-                </div>
+        </div>
 
+        <div class="grid">
+            <div class="input-group">
+                <label for="nazioneNascita">Nazione di Nascita</label>
+                <input type="text" id="nazioneNascita" name="nazioneNascita"  required>
+            </div>
+            <div class="input-group">
+                <label for="comuneNascita">Comune di Nascita</label>
+                <input type="text" id="comuneNascita" name="comuneNascita"  required>
+            </div>
+            <div class="input-group">
                 <div class="input-group">
-                    <label for="comune_residenza">Comune di Residenza</label>
-                    <input type="text" id="comune_residenza" name="comune_residenza">
-                </div>
-        
-                <div class="input-group">
-                    <label for="indirizzo_residenza">Indirizzo di Residenza</label>
-                    <input type="text" id="indirizzo_residenza" name="indirizzo_residenza">
+                    <label for="dataNascita">Data di Nascita</label>
+                    <input type="date" id="dataNascita" name="dataNascita"  required>
                 </div>
             </div>
-            <div class="grid">
-                <div class="input-group">
-                    <label for="cap">CAP</label>
-                    <input type="text" id="cap" name="cap">
-                </div>
+        </div>
+        <div class="grid">
+            <div class="input-group">
+                <label for="sesso">Sesso</label>
+                <select id="sesso" name="sesso"  required>
+                    <option value="">-- Seleziona --</option>
+                    <option value="maschio">Maschio</option>
+                    <option value="femmina">Femmina</option>
+                </select>
             </div>
-            
+        </div>
 
-            <h3>Contatto</h3>
-            <div class="grid">
-                <div class="input-group">
-                    <div class="grid-item">
-                      <label for="email">Email</label>
-                      <input type="text" id="email" name="email">
-                    </div>
-                    
-                </div>
-                <div class="input-group">
-                    <div class="grid-item">
-                      <label for="telefono">Telefono</label>
-                      <input type="text" id="telefono" name="telefono">
-                    </div>
+
+        <h3>Residenza</h3>
+        <div class="grid">
+            <div class="input-group">
+                <label for="nazioneResidenza">Nazione di Residenza</label>
+                <input type="text" id="nazioneResidenza" name="nazioneResidenza">
+            </div>
+
+            <div class="input-group">
+                <label for="comuneResidenza">Comune di Residenza</label>
+                <input type="text" id="comuneResidenza" name="comuneResidenza">
+            </div>
+
+            <div class="input-group">
+                <label for="indirizzo">Indirizzo di Residenza</label>
+                <input type="text" id="indirizzo" name="indirizzo">
+            </div>
+        </div>
+        <div class="grid">
+            <div class="input-group">
+                <label for="cap">CAP</label>
+                <input type="text" id="cap" name="cap">
+            </div>
+        </div>
+
+
+        <h3>Contatto</h3>
+        <div class="grid">
+            <div class="input-group">
+                <div class="grid-item">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
                 </div>
 
             </div>
-        </form>
-    </div>
-    <button type="submit">Invia</button>
+            <div class="input-group">
+                <div class="grid-item">
+                    <label for="numeroCellulare">Cellulare</label>
+                    <input type="text" id="numeroCellulare" name="numeroCellulare">
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div id="loading-overlay" style="display: none;">
+    <div class="loading-spinner"></div>
+</div>
+<!--<button type="submit">Invia</button>-->
+<button id="mioBottone">Invia</button>
+<script src="script.js"></script>
 </body>
 </html>
