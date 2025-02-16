@@ -15,7 +15,7 @@ public class AnagraficaController {
     @Autowired
     private AnagraficaServiceImpl anagraficaService;
 
-    @GetMapping
+    @GetMapping("/getAllAnagrafica")
     public List<Anagrafica> getAllAnagrafica() {
         return anagraficaService.getAllAnagrafica();
     }

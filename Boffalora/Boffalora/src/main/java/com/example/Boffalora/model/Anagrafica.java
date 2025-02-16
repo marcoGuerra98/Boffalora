@@ -46,6 +46,8 @@ public class Anagrafica {
     @Column(name = "cap")
     private String cap;
 
+    public Anagrafica() {
+    }
 
     public Anagrafica(Long id, String nome, String cognome, String sesso, String codiceFiscale, Date dataNascita,
                       String nazioneNascita, String comuneNascita, String nazioneResidenza, String comuneResidenza,
