@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/anagrafica")
 public class AnagraficaController {
-
     @Autowired
     private AnagraficaServiceImpl anagraficaService;
 

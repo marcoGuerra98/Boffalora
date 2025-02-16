@@ -1,8 +1,8 @@
 document.getElementById("mioBottone").addEventListener('click', () => {
     event.preventDefault();
 
-    // Mostra la pagina di caricamento
-    window.location.href = 'loading.html';
+    // Mostra l'overlay prima di inviare la richiesta
+    document.getElementById('loading-overlay').style.display = 'flex';
 
     const anagrafica = {
         nome: document.getElementById('nome').value,
@@ -32,6 +32,7 @@ document.getElementById("mioBottone").addEventListener('click', () => {
         body: JSON.stringify(anagrafica)
     })
     .then(response => {
+         console.log('Risposta del server:', response);
          if (response.ok) {
              return response.json(); // <--- Sposta response.json() qui
          } else {
