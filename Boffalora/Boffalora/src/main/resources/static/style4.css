@@ -1,0 +1,72 @@
+body {
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.container {
+    /*max-width: 800px;*/
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    align-items: center; /* Centra il contenuto verticalmente */
+    margin-bottom: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 100px;
+    margin-bottom: 3px;
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+}
+
+.input-group {
+  display: inline-block; /* Permette agli elementi di affiancarsi */
+  width: 100%; /* Imposta la larghezza desiderata */
+  margin-right: 3px; /* Aggiunge spazio tra i campi */
+  margin-bottom: 3px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #00ADC6;
+}
+
+button[type="submit"] {
+  width: 250px;
+  grid-column: 1 / 1; 
+  background-color: skyblue;
+  color: black;
+  padding: 10px 15px;
+  border: black;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  font-size: 21px;
+}
+
+.header {
+  display: flex; /* Abilita Flexbox per il contenitore */
+  align-items: center; /* Allinea verticalmente gli elementi al centro */
+}
+
+.header img {
+  margin-right: 20px; /* Spazio tra immagine e titolo */
+}

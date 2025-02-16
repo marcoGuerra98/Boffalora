@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesseramento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tesseramento Proloco</h1>
+    <div class="container">
+        <h3>Dati Anagrafici</h3>
+        <form id="myForm">
+            <div class="grid">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome"  required>
+                </div>
+                <div class="input-group">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" id="cognome" name="cognome"  required>
+                </div>
+                <div class="input-group">
+                    <label for="codice_fiscale">Codice Fiscale</label>
+                    <input type="text" id="codice_fiscale" name="codice_fiscale">
+                </div>
+            </div>
+    
+            <div class="grid">
+                <div class="input-group">
+                    <label for="nazione_nascita">Nazione di Nascita</label>
+                    <input type="text" id="nazione_nascita" name="nazione_nascita"  required>
+                </div>
+                <div class="input-group">
+                    <label for="comuneNascita">Comune di Nascita</label>
+                    <input type="text" id="comuneNascita" name="comuneNascita"  required>
+                </div>
+                <div class="input-group">
+                    <div class="input-group">
+                        <label for="data_nascita">Data di Nascita</label>
+                        <input type="date" id="data_nascita" name="data_nascita"  required>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="input-group">
+                    <label for="sesso">Sesso</label>
+                    <select id="sesso" name="sesso"  required>
+                        <option value="">-- Seleziona --</option>
+                        <option value="maschio">Maschio</option>
+                        <option value="femmina">Femmina</option>
+                    </select>
+                </div>
+            </div>
+            
+             
+            <h3>Residenza</h3>
+            <div class="grid">
+                <div class="input-group">
+                    <label for="nazione_residenza">Nazione di Residenza</label>
+                    <input type="text" id="nazione_residenza" name="nazione_residenza">
+                </div>
+
+                <div class="input-group">
+                    <label for="comune_residenza">Comune di Residenza</label>
+                    <input type="text" id="comune_residenza" name="comune_residenza">
+                </div>
+        
+                <div class="input-group">
+                    <label for="indirizzo_residenza">Indirizzo di Residenza</label>
+                    <input type="text" id="indirizzo_residenza" name="indirizzo_residenza">
+                </div>
+            </div>
+            <div class="grid">
+                <div class="input-group">
+                    <label for="cap">CAP</label>
+                    <input type="text" id="cap" name="cap">
+                </div>
+            </div>
+            
+
+            <h3>Contatto</h3>
+            <div class="grid">
+                <div class="input-group">
+                    <div class="grid-item">
+                      <label for="email">Email</label>
+                      <input type="text" id="email" name="email">
+                    </div>
+                    
+                </div>
+                <div class="input-group">
+                    <div class="grid-item">
+                      <label for="telefono">Telefono</label>
+                      <input type="text" id="telefono" name="telefono">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <button type="submit">Invia</button>
+</body>
+</html>

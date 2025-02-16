@@ -1,0 +1,66 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Griglia responsiva */
+    grid-gap: 10px; /* Spazio tra gli elementi della griglia */
+    padding: 20px; /* Margine interno al contenitore */
+    max-width: 900px; /* Larghezza massima del contenitore */
+    margin: 0 auto; /* Centra il contenitore */
+}
+
+label {
+    grid-area: label;
+    grid-column: 1 / 4; /* Estende la label su tutte le colonne */
+}
+
+.container label {
+    display: block; /* Le label occupano tutta la larghezza della cella */
+    margin-bottom: 5px; /* Spazio sotto le label */
+}
+
+.container input,
+.container select {
+    width: 100%; /* Gli input e select occupano tutta la larghezza */
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+}
+
+.container button {
+    grid-column: 1 / -1; /* Il bottone "Invia" occupa tutta la larghezza */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Colore di esempio */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container h2 {
+    grid-column: 1 / -1; /* L'h2 occupa tutta la larghezza */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container a {
+    grid-column: 1 / -1; /* Il link occupa tutta la larghezza */
+    text-align: center;
+    color: blue;
+    text-decoration: none;
+}
+
+/* Stili opzionali per migliorare l'aspetto */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Stile per i messaggi di errore (se li usi con JavaScript) */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
