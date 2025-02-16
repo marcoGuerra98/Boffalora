@@ -48,7 +48,7 @@ input, select {
     border: 1px solid #00ADC6;
 }
 
-button[type="submit"] {
+#mioBottone{
   width: 250px;
   grid-column: 1 / 1; 
   background-color: skyblue;

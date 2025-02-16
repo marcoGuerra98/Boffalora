@@ -1,4 +1,4 @@
-document.getElementById('dataForm').addEventListener('submit', function(event) {
+document.getElementById("mioBottone").addEventListener('click', () => {
     event.preventDefault();
 
     const anagrafica = {
@@ -12,26 +12,25 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
         nazioneResidenza: document.getElementById('nazioneResidenza').value,
         comuneResidenza: document.getElementById('comuneResidenza').value,
         indirizzo: document.getElementById('indirizzo').value,
-        cap: document.getElementById('cap')
+        cap: document.getElementById('cap').value
     };
 
     const user = {
         anagrafica: anagrafica,
         email: document.getElementById('email').value,
-        numeroCellulare: document.getElementById('numeroCellulare').value,
-        statoIscrizione: document.getElementById('statoIscrizione').value
+        numeroCellulare: document.getElementById('numeroCellulare').value
     }
 
-    fetch('/addListToDB', {
+    fetch('/api/anagrafica/setAnagrafica', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(anagrafica)
     })
     .then(response => response.json())
-    .then(user => {
-        console.log('Success:', user);
+    .then(anagrafica => {
+        console.log('Success:', anagrafica);
         alert('Dati inviati con successo!');
     })
     .catch((error) => {
