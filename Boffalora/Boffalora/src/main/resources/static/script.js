@@ -1,6 +1,9 @@
 document.getElementById("mioBottone").addEventListener('click', () => {
     event.preventDefault();
 
+    // Mostra la pagina di caricamento
+    window.location.href = 'loading.html';
+
     const anagrafica = {
         nome: document.getElementById('nome').value,
         cognome: document.getElementById('cognome').value,
@@ -23,15 +26,24 @@ document.getElementById("mioBottone").addEventListener('click', () => {
 
     fetch('/api/anagrafica/setAnagrafica', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
+            headers: {
+               'Content-Type': 'application/json'
         },
         body: JSON.stringify(anagrafica)
     })
-    .then(response => response.json())
-    .then(anagrafica => {
+    .then(response => {
+         if (response.ok) {
+             return response.json(); // <--- Sposta response.json() qui
+         } else {
+             alert('Errore durante l\'invio dei dati.');
+             window.location.href = '/paginaErrore.html';
+             throw new Error('Errore nella richiesta'); // <--- Importante: lancia un errore per evitare l'esecuzione del .then successivo
+         }
+    })
+    .then(anagrafica => { // <--- Questo blocco viene eseguito solo se response.ok è true
         console.log('Success:', anagrafica);
         alert('Dati inviati con successo!');
+        window.location.href = '/paginaSuccesso.html'; // <--- Reindirizza qui solo dopo il successo completo
     })
     .catch((error) => {
         console.error('Error:', error);
