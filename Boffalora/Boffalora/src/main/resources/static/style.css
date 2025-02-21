@@ -35,6 +35,37 @@ body {
   margin-bottom: 3px;
 }
 
+.iban-container {
+  display: inline-block; /* Permette agli elementi di affiancarsi */
+  width: 90%; /* Imposta la larghezza desiderata */
+  margin-right: 3px; /* Aggiunge spazio tra i campi */
+  margin-bottom: 3px;
+}
+
+.iban-container {
+  display: flex; /* Abilita flexbox per il contenitore dell'IBAN */
+  flex-direction: column; /* Dispone gli elementi verticalmente */
+  align-items: left; /* Allinea gli elementi orizzontalmente al centro */
+}
+
+.iban-container button {
+  margin-top: 30px; /* Spazio tra l'input e il bottone */
+}
+
+#copy-button {
+  width: 250px;
+  grid-column: 1 / 1;
+  background-color: skyblue;
+  color: black;
+  padding: 10px 15px;
+  border: black;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  font-size: 21px;
+}
+
 
 label {
     display: block;
@@ -105,4 +136,14 @@ img {
   width: 150px; /* Larghezza relativa al contenitore genitore */
   height: auto;
   margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 5.1em; /* Dimensione del testo più grande */
+  color: #007bff; /* Colore del testo blu */
+  font-family: 'Arial', sans-serif; /* Tipo di carattere Arial */
+  text-align: left; /* Allineamento del testo a sinistra */
+  background-color: #f0f0f0; /* Colore di sfondo grigio chiaro */
+  padding: 10px; /* Spazio interno al testo */
+  border-bottom: 2px solid #ccc; /* Bordo inferiore grigio */
 }

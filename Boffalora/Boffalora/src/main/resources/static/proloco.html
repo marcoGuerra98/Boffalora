@@ -102,11 +102,25 @@
         </div>
     </form>
 </div>
+
+<div class="grid">
+
+    <div class="iban-container">
+        <label for="iban">Questo è l'IBAN a cui è possibile inviare i soldi per il pagamento della tessera:</label>
+        <input type="text" id="iban" value="IT60X0542811101000000123456" readonly>
+    </div>
+
+    <div class="iban-container">
+        <button id="copy-button">Copia</button>
+    </div>
+</div>
+
 <div id="loading-overlay" style="display: none;">
     <div class="loading-spinner"></div>
 </div>
 <!--<button type="submit">Invia</button>-->
 <button id="mioBottone">Invia</button>
 <script src="script.js"></script>
+<script src="copia_botton.js"></script>
 </body>
 </html>
