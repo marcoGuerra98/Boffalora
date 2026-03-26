@@ -162,10 +162,10 @@ class ProjectApplicationTests {
 
 		// 1. Prova a trovare "marco"
 		System.out.println("🔍 Cercando: findByNomeUtente('marco')...");
-		Optional<UserEntity> marcoResult = userRepository.findByUserName("marco");
+		UserEntity marcoResult = userRepository.findByUserName("marco");
 
-		if (marcoResult.isPresent()) {
-			UserEntity marco = marcoResult.get();
+		if (marcoResult != null) {
+			UserEntity marco = marcoResult;
 			System.out.println("✅ TROVATO!");
 			System.out.println("  ID: " + marco.getId());
 			System.out.println("  Nome Utente: '" + marco.getUserName() + "'");
@@ -179,8 +179,8 @@ class ProjectApplicationTests {
 
 		// 2. Prova anche gli altri utenti
 		System.out.println("\n🔍 Cercando: findByNomeUtente('mario.rossi')...");
-		Optional<UserEntity> marioResult = userRepository.findByUserName("mario.rossi");
-		if (marioResult.isPresent()) {
+		UserEntity marioResult = userRepository.findByUserName("mario.rossi");
+		if (marioResult != null) {
 			System.out.println("✅ mario.rossi trovato");
 		} else {
 			System.out.println("❌ mario.rossi non trovato");

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -34,13 +36,13 @@ public class UserEntity {
     private Boolean attivo;
 
     @Column(name = "data_creazione", nullable = false, updatable = false)
-    private Date dataCreazione;
+    private LocalDateTime dataCreazione;
 
     @Column(name = "data_scadenza")
-    private Date dataScadenza;
+    private LocalDate dataScadenza;
 
     @Column(name = "ultimo_accesso")
-    private Date ultimoAccesso;
+    private LocalDateTime ultimoAccesso;
 
     @Column(name = "tentativi_login", nullable = false)
     private Integer tentativiLogin;

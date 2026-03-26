@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-    Optional<UserEntity> findByUserName(String nomeUtente);
+    UserEntity findByUserName(String nomeUtente);
 
     @Override
     @NonNull
