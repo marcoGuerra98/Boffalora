@@ -1,5 +1,6 @@
 package com.boffa.project;
 
+import com.boffa.project.config.SecurityConfig;
 import com.boffa.project.entity.UserEntity;
 import com.boffa.project.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,9 @@ class ProjectApplicationTests {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	SecurityConfig securityConfig;
 
 	@Test
 	void contextLoads() {
@@ -187,6 +191,16 @@ class ProjectApplicationTests {
 		}
 
 		System.out.println("\n=== FINE TEST ===\n");
+	}
+
+	@Test
+	void createPasswordHash() {
+		String password = "manfredonia";
+		String hashedPassword = org.springframework.security.crypto.bcrypt.BCrypt.hashpw(password, org.springframework.security.crypto.bcrypt.BCrypt.gensalt());
+		String hashedPassword2 = securityConfig.passwordEncoder().encode(password);
+		System.out.println("Password originale: " + password);
+		System.out.println("Password hashata: " + hashedPassword);
+		System.out.println("Password hashata (via SecurityConfig): " + hashedPassword2);
 	}
 
 }

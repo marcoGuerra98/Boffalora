@@ -1,0 +1,8 @@
+com\boffa\project\ServletInitializer.class
+com\boffa\project\dto\UserDto.class
+com\boffa\project\mapper\UserMapper.class
+com\boffa\project\ProjectApplication.class
+com\boffa\project\repository\UserRepository.class
+com\boffa\project\entity\UserEntity.class
+com\boffa\project\config\SecurityConfig.class
+com\boffa\project\service\CustomUserDetailsService.class
