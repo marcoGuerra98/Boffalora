@@ -43,7 +43,36 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+
+        return new PasswordEncoder() {
+            @Override
+            public String encode(CharSequence rawPassword) {
+                return bcrypt.encode(rawPassword);
+            }
+
+            @Override
+            public boolean matches(CharSequence rawPassword, String storedPassword) {
+                if (storedPassword == null) {
+                    return false;
+                }
+
+                // Fallback temporaneo: supporta sia hash BCrypt sia password legacy in chiaro.
+                if (storedPassword.startsWith("$2a$") || storedPassword.startsWith("$2b$") || storedPassword.startsWith("$2y$")) {
+                    return bcrypt.matches(rawPassword, storedPassword);
+                }
+
+                return rawPassword.toString().equals(storedPassword);
+            }
+
+            @Override
+            public boolean upgradeEncoding(String encodedPassword) {
+                return encodedPassword == null
+                        || (!encodedPassword.startsWith("$2a$")
+                        && !encodedPassword.startsWith("$2b$")
+                        && !encodedPassword.startsWith("$2y$"));
+            }
+        };
     }
 }
 

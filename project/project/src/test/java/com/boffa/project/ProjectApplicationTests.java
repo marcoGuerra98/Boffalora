@@ -203,4 +203,20 @@ class ProjectApplicationTests {
 		System.out.println("Password hashata (via SecurityConfig): " + hashedPassword2);
 	}
 
+	@Test
+	void testPasswordEncoder() {
+		UserEntity marcoResult = userRepository.findByUserName("marco");
+		String password = "manfredonia";
+		String encodedPassword = securityConfig.passwordEncoder().encode(password);
+
+		String storedPassword = marcoResult.getPassword();
+		String storredPassword2 = securityConfig.passwordEncoder().encode(storedPassword);
+
+		boolean matches = securityConfig.passwordEncoder().matches(encodedPassword, storredPassword2);
+		System.out.println("Password originale: " + password);
+		System.out.println("Password hashata (dal DB): " + marcoResult.getPassword());
+		System.out.println("Password hashata (nuova): " + encodedPassword);
+		System.out.println("La password originale corrisponde a quella hashata dal DB? " + matches);
+	}
+
 }
