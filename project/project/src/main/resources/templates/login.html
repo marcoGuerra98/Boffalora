@@ -2,20 +2,89 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-<h2>Accedi</h2>
+<div class="background">
+    <div class="grid-lines"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+</div>
 
-<form th:action="@{/login}" method="post">
-    <label>Username:</label>
-    <input type="text" name="username"/>
+<div class="container">
+    <div class="card">
 
-    <label>Password:</label>
-    <input type="password" name="password"/>
+        <div class="brand">
+            <div class="brand-mark">
+                <span class="brand-line"></span>
+                <span class="brand-icon">◈</span>
+                <span class="brand-line"></span>
+            </div>
+            <h1 class="brand-name">Accedi</h1>
+            <p class="brand-sub">Bentornato. Inserisci le tue credenziali.</p>
+        </div>
 
-    <button type="submit">Login</button>
-</form>
+        <form th:action="@{/login}" method="post" class="login-form">
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="username" class="field-label">Username</label>
+                    <div class="field-wrap">
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            class="field-input"
+                            placeholder="il tuo username"
+                            autocomplete="username"
+                            required/>
+                        <span class="field-border"></span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="password" class="field-label">Password</label>
+                    <div class="field-wrap">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="field-input"
+                            placeholder="••••••••"
+                            autocomplete="current-password"
+                            required/>
+                        <span class="field-border"></span>
+                        <button type="button" class="toggle-pw" aria-label="Mostra/nascondi password">
+                            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div th:if="${param.error}" class="error-msg">
+                <span>✕</span> Credenziali non valide. Riprova.
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span class="btn-text">Entra</span>
+                <span class="btn-arrow">→</span>
+            </button>
+
+        </form>
+
+        <p class="footer-note">Sistema protetto · accesso riservato</p>
+    </div>
+</div>
+
+<script th:src="@{/ts/login.js}"></script>
 
 </body>
 </html>
