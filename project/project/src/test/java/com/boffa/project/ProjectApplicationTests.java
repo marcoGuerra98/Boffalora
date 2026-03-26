@@ -195,7 +195,7 @@ class ProjectApplicationTests {
 
 	@Test
 	void createPasswordHash() {
-		String password = "manfredonia";
+		String password = "password123";
 		String hashedPassword = org.springframework.security.crypto.bcrypt.BCrypt.hashpw(password, org.springframework.security.crypto.bcrypt.BCrypt.gensalt());
 		String hashedPassword2 = securityConfig.passwordEncoder().encode(password);
 		System.out.println("Password originale: " + password);
