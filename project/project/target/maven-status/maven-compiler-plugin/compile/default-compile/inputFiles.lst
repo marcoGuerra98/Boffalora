@@ -1,8 +1,14 @@
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\config\SecurityConfig.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\controller\AuthController.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\controller\LogInController.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\dto\auth\LoginRequest.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\dto\auth\LoginResponse.java
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\dto\UserDto.java
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\entity\UserEntity.java
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\mapper\UserMapper.java
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\ProjectApplication.java
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\repository\UserRepository.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\security\JwtAuthenticationFilter.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\security\JwtProperties.java
+C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\security\JwtService.java
 C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\service\CustomUserDetailsService.java
-C:\Users\marco.guerra\STUDIO\PROGETTO2\Boffalora\project\project\src\main\java\com\boffa\project\ServletInitializer.java
