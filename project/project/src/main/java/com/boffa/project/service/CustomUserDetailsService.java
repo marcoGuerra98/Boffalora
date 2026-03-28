@@ -24,14 +24,10 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("Utente non trovato");
         }
 
-        System.out.println("Caricamento utente: " + user.getUserName());
-        System.out.println("Ruolo utente: " + user.getPassword());
-
         return User.builder()
                 .username(user.getUserName())
                 .password(user.getPassword())
                 .roles(user.getRuolo().replace("ROLE_", ""))
                 .build();
     }
-
 }

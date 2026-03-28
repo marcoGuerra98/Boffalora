@@ -4,7 +4,7 @@
     <title>Login</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" th:href="@{/login.css}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
 </head>
@@ -29,7 +29,7 @@
             <p class="brand-sub">Bentornato. Inserisci le tue credenziali.</p>
         </div>
 
-        <form th:action="@{/login}" method="post" class="login-form">
+        <form class="login-form">
 
             <div class="field-group">
                 <div class="field">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div th:if="${param.error}" class="error-msg">
+            <div id="login-error" class="error-msg hidden">
                 <span>✕</span> Credenziali non valide. Riprova.
             </div>
 
@@ -84,7 +84,7 @@
     </div>
 </div>
 
-<script th:src="@{/ts/login.js}"></script>
+<script th:src="@{/login.js}"></script>
 
 </body>
 </html>

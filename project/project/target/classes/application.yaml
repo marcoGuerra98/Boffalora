@@ -20,3 +20,8 @@ spring:
 
 server:
   port: 8080
+
+jwt:
+  secret: ${JWT_SECRET:change-me-dev-secret-key-please-replace-1234567890}
+  expiration-ms: 3600000
+  issuer: boffalora-app
