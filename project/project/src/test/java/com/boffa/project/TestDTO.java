@@ -17,9 +17,7 @@ import org.springframework.test.annotation.Rollback;
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
 @Transactional
@@ -139,7 +137,7 @@ public class TestDTO {
         // Ad esempio:
 
          SquadraEntity squadra = new SquadraEntity();
-         squadra.setNome("Juventus");
+         squadra.setName("Juventus");
          squadra.setVittorie(0);
          squadra.setSconfitte(0);
          squadra.setPareggi(0);

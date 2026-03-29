@@ -42,6 +42,7 @@ public class SecurityConfig {
                                 "/login.js",
                                 "/api/auth/login"
                         ).permitAll()
+                        .requestMatchers("/squadra/createTeam").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login")))

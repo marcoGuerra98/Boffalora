@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class SquadraDto {
 
     private Integer id;
-    private String nome;
+    private String name;
     private Integer punti;
     private Integer vittorie;
     private Integer sconfitte;

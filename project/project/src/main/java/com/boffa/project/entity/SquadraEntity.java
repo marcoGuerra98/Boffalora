@@ -17,7 +17,7 @@ public class SquadraEntity {
     private Integer id;
 
     @Column(name = "nome", nullable = false, unique = true, length = 100)
-    private String nome;
+    private String name;
 
     @Column(name = "punti", nullable = false)
     private Integer punti;
