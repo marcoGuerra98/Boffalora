@@ -1,14 +1,20 @@
 package com.boffa.project;
 
 import com.boffa.project.dto.UserDto;
+import com.boffa.project.entity.AnagraficaEntity;
 import com.boffa.project.entity.UserEntity;
 import com.boffa.project.mapper.UserMapper;
+import com.boffa.project.repository.AnagraficaRepository;
 import com.boffa.project.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.sql.DataSource;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
@@ -19,6 +25,9 @@ public class TestDTO {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private AnagraficaRepository anagraficaRepository;
 
     @Autowired
     UserMapper userMapper;
@@ -50,6 +59,62 @@ public class TestDTO {
             System.out.println("   Email: " + marcoDto.getEmail());
         } else {
             System.out.println("❌ ERRORE: UserDto è null");
+        }
+
+    }
+
+    @Test
+    void testAnagraficaEntity() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║ TEST AnagraficaEntity: Verifica AnagraficaEntity         ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝\n");
+
+        // Qui potresti creare un'istanza di AnagraficaEntity, popolarla con dati di test
+        // e verificare che i getter/setter funzionino correttamente.
+        // Ad esempio:
+
+        String input = "1998-04-12 10:30";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
+        LocalDateTime dateTime = LocalDateTime.parse(input, formatter);
+
+
+        AnagraficaEntity anagrafica = new AnagraficaEntity();
+        anagrafica.setNome("Marco");
+        anagrafica.setCognome("Guerra");
+        anagrafica.setCodiceFiscale("GRRMRC98D12E648Q");
+        anagrafica.setData_nascita(dateTime.toLocalDate());
+        anagrafica.setIndirizzo("Via Aldo Moro 8");
+        anagrafica.setCitta("Boffalora d'Adda");
+        anagrafica.setCap("26811");
+        anagrafica.setTelefono("3661994461");
+        anagrafica.setEmail("marcoguerra098@gmail.com");
+
+        AnagraficaEntity salvata = anagraficaRepository.save(anagrafica);
+
+        if (salvata.getId() != null) {
+            System.out.println("✅ AnagraficaEntity salvata correttamente con ID: " + salvata.getId());
+        } else {
+            System.out.println("❌ ERRORE: AnagraficaEntity non salvata correttamente");
+        }
+    }
+
+    @Test
+    void testExtractAllAnagrafiche() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║ TEST Extract All Anagrafiche: Verifica estrazione         ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝\n");
+
+        // Qui potresti testare l'estrazione di tutte le anagrafiche dal database
+        // e verificare che i dati siano corretti.
+        // Ad esempio:
+        
+        List<AnagraficaEntity> anagrafiche = anagraficaRepository.findAll();
+        if (!anagrafiche.isEmpty()) {
+            System.out.println("✅ Anagrafiche estratte correttamente:");
+            anagrafiche.forEach(a -> System.out.println("   " + a.getNome() + " " + a.getCognome()));
+        } else {
+            System.out.println("❌ ERRORE: Nessuna anagrafica trovata");
         }
 
     }
