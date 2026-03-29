@@ -34,7 +34,7 @@ public class SquadraServiceImpl implements SquadraService {
     @Override
     public boolean createTeam(String name) {
         if (name != null) {
-            if (!squadraRepository.findNmeByName(name)) {
+            if (!Boolean.parseBoolean(squadraRepository.findNameByName(name))) {
                 SquadraEntity squadraEntity = new SquadraEntity(name);
                 SquadraEntity save = squadraRepository.save(squadraEntity);
                 return save.getId() != null;

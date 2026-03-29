@@ -158,4 +158,24 @@ public class TestDTO {
              System.out.println("❌ ERRORE: Squadra non salvata correttamente");
          }
     }
+
+    @Test
+    void testFindName() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║ TEST Find Name: Verifica ricerca squadra per nome          ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝\n");
+
+        // Qui potresti testare la ricerca di una squadra per nome
+        // e verificare che i dati restituiti siano corretti.
+        // Ad esempio:
+
+        String nameToFind = "Barcellona";
+
+        String exists = squadraRepository.findNameByName(nameToFind);
+        if (exists != null) {
+            System.out.println("✅ La squadra " + nameToFind + " esiste nel database.");
+        } else {
+            System.out.println("❌ ERRORE: La squadra " + nameToFind +" non esiste nel database.");
+        }
+    }
 }
