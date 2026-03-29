@@ -2,13 +2,17 @@ package com.boffa.project;
 
 import com.boffa.project.dto.UserDto;
 import com.boffa.project.entity.AnagraficaEntity;
+import com.boffa.project.entity.SquadraEntity;
 import com.boffa.project.entity.UserEntity;
 import com.boffa.project.mapper.UserMapper;
 import com.boffa.project.repository.AnagraficaRepository;
+import com.boffa.project.repository.SquadraRepository;
 import com.boffa.project.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
@@ -18,6 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
+@Transactional
 public class TestDTO {
 
     @Autowired
@@ -28,6 +33,9 @@ public class TestDTO {
 
     @Autowired
     private AnagraficaRepository anagraficaRepository;
+
+    @Autowired
+    private SquadraRepository squadraRepository;
 
     @Autowired
     UserMapper userMapper;
@@ -108,7 +116,7 @@ public class TestDTO {
         // Qui potresti testare l'estrazione di tutte le anagrafiche dal database
         // e verificare che i dati siano corretti.
         // Ad esempio:
-        
+
         List<AnagraficaEntity> anagrafiche = anagraficaRepository.findAll();
         if (!anagrafiche.isEmpty()) {
             System.out.println("✅ Anagrafiche estratte correttamente:");
@@ -117,5 +125,39 @@ public class TestDTO {
             System.out.println("❌ ERRORE: Nessuna anagrafica trovata");
         }
 
+    }
+
+    @Test
+    @Rollback(false) // Rimuovi questa annotazione se vuoi che il test venga rollbackato dopo l'esecuzione
+    void insertIntoSquadra() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║ TEST Insert Into Squadra: Verifica inserimento squadra     ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝\n");
+
+        // Qui potresti testare l'inserimento di una nuova squadra nel database
+        // e verificare che l'inserimento sia avvenuto correttamente.
+        // Ad esempio:
+
+         SquadraEntity squadra = new SquadraEntity();
+         squadra.setNome("Juventus");
+         squadra.setVittorie(0);
+         squadra.setSconfitte(0);
+         squadra.setPareggi(0);
+         squadra.setPunti(0);
+         squadra.setGoalFatti(0);
+         squadra.setGoalSubiti(0);
+
+         SquadraEntity salvata = squadraRepository.save(squadra);
+
+
+         if (salvata.getId() != null) {
+             System.out.println("✅ Squadra salvata correttamente con ID: " + salvata.getId());
+             System.out.println(" Punti: " + salvata.getPunti());
+             System.out.println(" Vittorie: " + salvata.getVittorie());
+             System.out.println(" Sconfitte: " + salvata.getSconfitte());
+             System.out.println(" Pareggi: " + salvata.getPareggi());
+         } else {
+             System.out.println("❌ ERRORE: Squadra non salvata correttamente");
+         }
     }
 }
