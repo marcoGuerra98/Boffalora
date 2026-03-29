@@ -40,7 +40,8 @@ public class SecurityConfig {
                                 "/favicon.ico",
                                 "/login.css",
                                 "/login.js",
-                                "/api/auth/login"
+                                "/api/auth/login",
+                                "/anagrafica/getAll"
                         ).permitAll()
                         .requestMatchers("/squadra/createTeam").hasRole("ADMIN")
                         .anyRequest().authenticated()

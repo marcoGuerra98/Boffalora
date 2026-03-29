@@ -30,7 +30,7 @@ public class AnagraficaEntity {
     private String indirizzo;
 
     @Column(name = "data_nascita", nullable = false)
-    private LocalDate data_nascita;
+    private LocalDate dataNascita;
 
     @Column(name = "citta", nullable = false, length = 50)
     private String citta;

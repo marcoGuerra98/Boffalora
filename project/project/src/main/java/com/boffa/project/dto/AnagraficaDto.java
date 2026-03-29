@@ -18,7 +18,7 @@ public class AnagraficaDto {
     private String cognome;
     private String codiceFiscale;
     private String indirizzo;
-    private Date data_nascita;
+    private Date dataNascita;
     private String citta;
     private String cap;
     private String telefono;
