@@ -4,8 +4,20 @@ import com.boffa.project.dto.SquadraDto;
 import com.boffa.project.entity.SquadraEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class SquadraMapper {
+
+    public List<SquadraDto> createSquadraDtoListFromEntityList(List<SquadraEntity> squadraEntities) {
+        if (squadraEntities == null) {
+            return List.of();
+        }
+
+        return squadraEntities.stream()
+                .map(this::createSquadraDtoFromEntity)
+                .toList();
+    }
 
     public SquadraDto createSquadraDtoFromEntity(SquadraEntity squadraEntity) {
         if (squadraEntity == null) {

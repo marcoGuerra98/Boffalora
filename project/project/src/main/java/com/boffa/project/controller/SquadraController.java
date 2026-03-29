@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/squadra")
 public class SquadraController {
@@ -27,6 +29,17 @@ public class SquadraController {
     @PostMapping("/createTeam")
     public ResponseEntity<String> createTeam(
             @RequestParam String name) {
-        return null;
+        boolean created = squadraService.createTeam(name);
+        if (created) {
+            return ResponseEntity.ok("Squadra creata con successo");
+        } else {
+            return ResponseEntity.status(400).body("Errore nella creazione della squadra");
+        }
+    }
+
+    @GetMapping("/allTeams")
+    public ResponseEntity<List<SquadraDto>> allTeams() {
+        List<SquadraDto> squadre = squadraService.allTeams();
+        return ResponseEntity.ok(squadre);
     }
 }

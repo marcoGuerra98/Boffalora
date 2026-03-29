@@ -36,4 +36,14 @@ public class SquadraEntity {
 
     @Column(name = "goal_subiti", nullable = false)
     private Integer goalSubiti;
+
+    public SquadraEntity(String name) {
+        this.name = name;
+        this.punti = 0;
+        this.vittorie = 0;
+        this.sconfitte = 0;
+        this.pareggi = 0;
+        this.goalFatti = 0;
+        this.goalSubiti = 0;
+    }
 }
