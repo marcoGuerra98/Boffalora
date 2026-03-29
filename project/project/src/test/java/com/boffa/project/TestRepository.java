@@ -1,6 +1,8 @@
 package com.boffa.project;
 
+import com.boffa.project.entity.PlayerEntity;
 import com.boffa.project.entity.RoleEntity;
+import com.boffa.project.repository.PlayerRepository;
 import com.boffa.project.repository.RoleRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
@@ -15,6 +17,9 @@ public class TestRepository {
 
     @Autowired
     RoleRepository roleRepository;
+
+    @Autowired
+    PlayerRepository playerRepository;
 
     @Test
     void testRoleRepository() {
@@ -34,5 +39,23 @@ public class TestRepository {
                 }
             }
 
+    }
+
+    @Test
+    void testPlayerRepository() {
+         //Qui potresti testare i metodi del PlayerRepository, ad esempio:
+         List<PlayerEntity> players = playerRepository.findAll();
+         if (players.isEmpty()) {
+             System.out.println("Nessun giocatore trovato nel database.");
+         } else {
+             System.out.println("Giocatori trovati:");
+             for (PlayerEntity player : players) {
+                 System.out.println("- " +
+                         player.getAnagrafica().getNome() + " " +
+                         player.getAnagrafica().getCognome() + " " +
+                         player.getSquadra().getName() + " " +
+                         player.getRuolo().getDescrizione());
+             }
+         }
     }
 }
