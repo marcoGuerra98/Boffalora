@@ -49,7 +49,8 @@ public class SecurityConfig {
                                 "/login.css",
                                 "/login.js",
                                 "/api/auth/login",
-                                "/anagrafica/getAll"
+                                "/anagrafica/getAll",
+                                "/player/getAll"
                         ).permitAll()
                         .requestMatchers("/squadra/createTeam").hasRole("ADMIN")
                         .anyRequest().authenticated()
