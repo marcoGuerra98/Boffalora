@@ -98,5 +98,19 @@ async function fetchData(entity) {
   }
 }
 
+async function logout() {
+  try {
+    await fetch(`${BASE_URL}/api/auth/logout`, {
+      method: 'POST',
+      credentials: 'include'
+    });
+  } catch (_) {
+    // anche se la chiamata fallisce, procedi col logout lato client
+  }
+  localStorage.removeItem('access_token');
+  window.location.href = '/login';
+}
+
 window.fetchData = fetchData;
+window.logout = logout;
 

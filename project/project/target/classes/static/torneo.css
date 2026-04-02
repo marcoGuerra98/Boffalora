@@ -392,8 +392,42 @@ footer {
   margin-left: auto;
 }
 
+/* LOGOUT BUTTON */
+.btn-logout {
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,64,96,0.3);
+  border-radius: 10px;
+  background: rgba(255,64,96,0.1);
+  color: #ff6b85;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.btn-logout svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-logout:hover {
+  background: rgba(255,64,96,0.2);
+  box-shadow: 0 0 16px rgba(255,64,96,0.2);
+  border-color: rgba(255,64,96,0.5);
+}
+
+.btn-logout:active {
+  transform: scale(0.96);
+}
+
 @media (max-width: 1100px) {
   main { grid-template-columns: 1fr; }
   header, main, footer { padding-left: 24px; padding-right: 24px; }
 }
-
