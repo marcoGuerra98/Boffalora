@@ -24,4 +24,11 @@ public class AnagraficaServiceImpl implements AnagraficaService {
         List<AnagraficaEntity> entityList = anagraficaRepository.findAll();
         return anagraficaMapper.createDtoListFromEntityList(entityList);
     }
+
+    @Override
+    public Integer insertNewAnag(AnagraficaDto dto) {
+        AnagraficaEntity entity = anagraficaMapper.createEntityFromDto(dto);
+        AnagraficaEntity savedEntity = anagraficaRepository.save(entity);
+        return savedEntity.getId();
+    }
 }

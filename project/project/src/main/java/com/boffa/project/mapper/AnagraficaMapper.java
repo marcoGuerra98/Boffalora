@@ -33,4 +33,24 @@ public class AnagraficaMapper {
         }
         return new AnagraficaDto();
     }
+
+    public List<AnagraficaEntity> createEntityListFromDtoList(List<AnagraficaDto> dtos) {
+        return dtos.stream().map(this::createEntityFromDto).toList();
+    }
+
+    public AnagraficaEntity createEntityFromDto(AnagraficaDto dto) {
+        AnagraficaEntity e = new AnagraficaEntity();
+        if (dto != null) {
+            e.setNome(dto.getNome());
+            e.setCognome(dto.getCognome());
+            e.setCodiceFiscale(dto.getCodiceFiscale());
+            e.setDataNascita(dto.getDataNascita());
+            e.setIndirizzo(dto.getIndirizzo());
+            e.setCitta(dto.getCitta());
+            e.setCap(dto.getCap());
+            e.setTelefono(dto.getTelefono());
+            e.setEmail(dto.getEmail());
+        }
+        return e;
+    }
 }

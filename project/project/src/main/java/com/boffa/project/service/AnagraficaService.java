@@ -7,4 +7,6 @@ import java.util.List;
 public interface AnagraficaService {
 
     List<AnagraficaDto> findAll();
+
+    Integer insertNewAnag(AnagraficaDto dto);
 }
