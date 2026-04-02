@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
           localStorage.setItem('access_token', data.token);
         }
 
-        window.location.href = '/home';
+        window.location.href = '/torneo';
       } catch (error) {
         if (errorBox) {
           errorBox.classList.remove('hidden');

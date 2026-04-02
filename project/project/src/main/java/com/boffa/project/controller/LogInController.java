@@ -20,4 +20,9 @@ public class LogInController {
     public String homePage() {
         return "home";
     }
+
+    @GetMapping("/torneo")
+    public String torneo() {
+        return "torneo";
+    }
 }
