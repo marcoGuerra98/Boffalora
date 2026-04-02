@@ -1,9 +1,15 @@
 const BASE_URL = 'http://localhost:8080';
 
+const ENTITY_ENDPOINTS = {
+  anagrafiche: '/anagrafica/getAll',
+  giocatori: '/giocatori',
+  squadre: '/squadre'
+};
+
 const FIELD_CONFIG = {
   anagrafiche: {
     name: (item) => `${String(item.nome ?? '')} ${String(item.cognome ?? '')}`.trim() || `ID ${String(item.id ?? '')}`,
-    fields: ['codice_fiscale', 'email', 'citta', 'telefono', 'data_nascita']
+    fields: ['codiceFiscale', 'email', 'citta', 'telefono', 'dataNascita', 'indirizzo', 'cap']
   },
   giocatori: {
     name: (item) => String(item.nome ?? item.cognome ?? `ID ${String(item.id ?? '')}`),
@@ -35,7 +41,8 @@ async function fetchData(entity) {
   resultsEl.innerHTML = '';
 
   try {
-    const res = await fetch(`${BASE_URL}/${entity}`);
+    const endpoint = ENTITY_ENDPOINTS[entity] || `/${entity}`;
+    const res = await fetch(`${BASE_URL}${endpoint}`);
     if (!res.ok) {
       throw new Error(`HTTP ${res.status} - ${res.statusText}`);
     }
