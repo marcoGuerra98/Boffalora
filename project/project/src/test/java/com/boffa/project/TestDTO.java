@@ -2,10 +2,12 @@ package com.boffa.project;
 
 import com.boffa.project.dto.UserDto;
 import com.boffa.project.entity.AnagraficaEntity;
+import com.boffa.project.entity.PlayerEntity;
 import com.boffa.project.entity.SquadraEntity;
 import com.boffa.project.entity.UserEntity;
 import com.boffa.project.mapper.UserMapper;
 import com.boffa.project.repository.AnagraficaRepository;
+import com.boffa.project.repository.PlayerRepository;
 import com.boffa.project.repository.SquadraRepository;
 import com.boffa.project.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -37,6 +39,9 @@ public class TestDTO {
 
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    PlayerRepository playerRepository;
 
     @Test
     void testUserDto() {
@@ -176,6 +181,29 @@ public class TestDTO {
             System.out.println("✅ La squadra " + nameToFind + " esiste nel database.");
         } else {
             System.out.println("❌ ERRORE: La squadra " + nameToFind +" non esiste nel database.");
+        }
+    }
+
+    @Test
+    void testFindAllPlayer() {
+        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
+        System.out.println("║ TEST Find All Player: Verifica estrazione di tutti i giocatori ║");
+        System.out.println("╚════════════════════════════════════════════════════════════╝\n");
+
+        // Qui potresti testare l'estrazione di tutti i giocatori dal database
+        // e verificare che i dati restituiti siano corretti.
+        // Ad esempio:
+
+        List<PlayerEntity> players = playerRepository.findAll();
+        if (!players.isEmpty()) {
+            System.out.println("✅ Giocatori estratti correttamente:");
+            players.forEach(p -> System.out.println(
+                    "   " + p.getUserName() + " - Valore: " + p.getValore() +
+                            " - Squadra: " + p.getSquadra().getName() +
+                            " - Ruolo: " + p.getRuolo().getDescrizione() +
+                            " - Anagrafica: " + p.getAnagrafica().getCodiceFiscale()));
+        } else {
+            System.out.println("❌ ERRORE: Nessun giocatore trovato");
         }
     }
 }
