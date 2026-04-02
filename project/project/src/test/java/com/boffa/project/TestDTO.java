@@ -89,7 +89,7 @@ public class TestDTO {
         anagrafica.setNome("Marco");
         anagrafica.setCognome("Guerra");
         anagrafica.setCodiceFiscale("GRRMRC98D12E648Q");
-        anagrafica.setData_nascita(dateTime.toLocalDate());
+        anagrafica.setDataNascita(dateTime.toLocalDate());
         anagrafica.setIndirizzo("Via Aldo Moro 8");
         anagrafica.setCitta("Boffalora d'Adda");
         anagrafica.setCap("26811");
