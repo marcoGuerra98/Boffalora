@@ -23,9 +23,7 @@ public class AnagraficaMapper {
             dto.setNome(entity.getNome());
             dto.setCognome(entity.getCognome());
             dto.setCodiceFiscale(entity.getCodiceFiscale());
-            LocalDate ld = entity.getDataNascita();
-            Date date = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
-            dto.setDataNascita(date);
+            dto.setDataNascita(entity.getDataNascita());
             dto.setIndirizzo(entity.getIndirizzo());
             dto.setCitta(entity.getCitta());
             dto.setCap(entity.getCap());

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Component
@@ -18,7 +19,7 @@ public class AnagraficaDto {
     private String cognome;
     private String codiceFiscale;
     private String indirizzo;
-    private Date dataNascita;
+    private LocalDate dataNascita;
     private String citta;
     private String cap;
     private String telefono;
