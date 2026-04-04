@@ -62,6 +62,11 @@ x86/
 
 ### env
 .env
+configuration.env
+env.properties
+*.env
+!.env.example
+**/application-local.properties
 # Maven / build output
 target/
 **/target/
