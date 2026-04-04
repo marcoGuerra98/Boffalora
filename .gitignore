@@ -62,3 +62,6 @@ x86/
 
 ### env
 .env
+# Maven / build output
+target/
+**/target/
