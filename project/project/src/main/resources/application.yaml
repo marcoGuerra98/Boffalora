@@ -1,9 +1,11 @@
 spring:
+  config:
+    import: optional:file:./configuration.env[.properties]
   datasource:
     # Server MySQL locale (connessione IDE "BELLUM"), schema applicativo: boffalora
     url: jdbc:mysql://localhost:3306/boffalora
-    username: root
-    password: root
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: project

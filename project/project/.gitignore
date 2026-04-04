@@ -1,0 +1,8 @@
+# Credenziali locali - NON committare
+configuration.env
+
+# Maven
+target/
+
+# Log
+*.log
