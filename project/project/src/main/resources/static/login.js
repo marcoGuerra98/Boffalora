@@ -1,3 +1,11 @@
+/**
+ * Legge il valore del cookie XSRF-TOKEN impostato da Spring Security.
+ */
+function getCsrfToken() {
+  const match = document.cookie.match(/(?:^|;\s*)XSRF-TOKEN=([^;]*)/);
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.querySelector('.toggle-pw');
   const passwordInput = document.querySelector('#password');

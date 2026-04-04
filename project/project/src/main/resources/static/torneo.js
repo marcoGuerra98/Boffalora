@@ -1,5 +1,14 @@
 const BASE_URL = 'http://localhost:8080';
 
+/**
+ * Legge il valore del cookie XSRF-TOKEN impostato da Spring Security.
+ */
+function getCsrfToken() {
+  const match = document.cookie.match(/(?:^|;\s*)XSRF-TOKEN=([^;]*)/);
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
+
 const ENTITY_ENDPOINTS = {
   anagrafiche: '/anagrafica/getAll',
   giocatori: '/giocatori',
@@ -107,8 +116,14 @@ async function fetchData(entity) {
 
 async function logout() {
   try {
+    const csrfToken = getCsrfToken();
+    const headers = {};
+    if (csrfToken) {
+      headers['X-XSRF-TOKEN'] = csrfToken;
+    }
     await fetch(`${BASE_URL}/api/auth/logout`, {
       method: 'POST',
+      headers: headers,
       credentials: 'include'
     });
   } catch (_) {

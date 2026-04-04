@@ -47,7 +47,7 @@ public class AuthController {
 
         ResponseCookie authCookie = ResponseCookie.from("AUTH_TOKEN", token)
                 .httpOnly(true)
-                .secure(false)
+                .secure(true)
                 .path("/")
                 .maxAge(Duration.ofMillis(jwtProperties.getExpirationMs()))
                 .sameSite("Lax")
